@@ -1,0 +1,59 @@
+Welcome to visit the homepage of our work PTP :-)
+
+
+The homepage contains the code, data, and original graphs in this work.
+The organizations of this homepage are described as follows.
+
+data.tar.xz: contains the raw data and experimental results in this work. (you can use "tar -x --xz -f data.tar.xz" to uncompress it)
+
+  - For each of 50 subjects, we have one folder, including the prioritization results, the execution time of tests, and the results of all the used measurements:
+		
+    (Note that TT refers to the total technique, GA refers to the additional technique, Genetic refers to the search-based technique, ART refers to the ARP technique, TimeAdditional refers to the cost-cognizant additional technique, and Time refers to the cost-only technique)
+
+	> APFD....txt: the results of the APFD measurement (e.g., APFDGAStatement.txt is the results of the APFD measurement for the statement-coverage-based additional technique)
+
+	> APFDc....txt: the results of the APFDc measurement (e.g., APFDcGAStatement.txt is the results of the APFDc measurement for the statement-coverage-based additional technique)
+
+	> CSVNEW....csv: the results of FT, LT, and AT (e.g., CSVNEWGAStatement.csv is the results of the FT, LT, AT measurements for the statement-coverage-based additional technique)
+
+	> exeTime: the execution time of tests
+
+	> Sequence....txt: the prioritization results (e.g., the test execution order determined by the statement-coverage-based additional technique)
+
+  - The ratio folder contains 50 files, each of which contains the execution time, the number of covered statements, and the number of covered methods for each test, which is the raw data of the inputs of PTP.
+
+  - The PTP folder containss one file and two subfolders:
+
+	> ptp.csv: the predicted results of PTP using leave-one-out cross validation
+
+	> Mls: the predicted results via different machine learning algorithms
+
+	> parameters: the predicted results via different parameters. In particular, for the name of each file, the first number refers to the depth and the second number refers to the round.
+		
+code.zip: contains the source code implemented in this work including two subfolders. (you can use "unzip code.zip" to uncompress it)
+
+  - prioritization: the implementations of studied test prioritization techniques
+
+  - script: the scripts used in this work
+
+	> 1automaticcollect.py and 2analyzeCoverage.py are responsible to collect and process coverage
+
+	> 3runPIT.py and 4get_test_mutant_info.py are responsible to collect and process mutations
+
+	> 61TMutantGroupandTmeMetricTimeResult.py, 62APFDc10.py, and 63calAPFD.py are responsible to compute the results of various measurements
+
+	> genfeatureset.py and genlabel.py are responsible to generate features and labels for these subjects
+	
+	> generatesvmformat.py, generatesvmformat_test.py and oversampling.py are responsible to generate the inputs of PTP
+
+	> xgboost_ptp.py is responsible to run PTP
+
+	> ptp.model is the trained model via PTP based on the data of the used 50 open-source projects, which is used to predict the optimal prioritization for industrial subjects in this work. That is, this model can be used directly for its practical usage
+
+figures.zip: contains the original graphs in the paper, which is much larger and more clear than those shown in the paper, including five subfolders. (you can use "unzip figures.zip" to uncompress it)
+
+  - The folder name is figure-[1~5]. This is because we have five figures in our paper, and the number is corresponding to that in the paper. Due to space limits of the paper, the figures shown in the paper may not be large enough, and thus we put all the original graphs (larger and more clear) on our project homepage.
+
+
+Thanks very much!
+
